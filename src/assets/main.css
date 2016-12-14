@@ -1,0 +1,40 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+    padding: 0 0;
+}
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+#content a {
+    color: #42b983;
+    text-decoration: none;
+}
+
+.header , .footer {
+    height: 9%;
+}
+.footer {
+    line-height: 50px;
+}
+.container {
+    height: 82%;
+}
+.link {
+    float: right !important;
+}
+.footerMsg {
+    height: 100%;
+    margin: 0 0;
+    font-family: Microsoft YaHei;
+    font-size: 80%;
+    text-align: center;
+}
+.title {
+    font-family: Microsoft YaHei;
+    font-size: 120%;
+    color: white !important;
+}
