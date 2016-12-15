@@ -72,7 +72,8 @@
     },
     methods: {
       onSubmit() {
-        console.log('submit!'+this.form);
+        console.log(this.form.name);
+        console.log(this.form);
       }
     }
   }

@@ -13,15 +13,33 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img class="imgload" src="http://desk.fd.zol-img.com.cn/t_s2560x1600c5/g5/M00/09/08/ChMkJ1Z9AyqINPLvAEuCktgw9dQAAGlOQLeLcAAS4Kq772.jpg"
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s2560x1600c5/g5/M00/09/08/ChMkJ1Z9AyqINPLvAEuCktgw9dQAAGlOQLeLcAAS4Kq772.jpg"
                              alt="首页banner图片01">
                     </div>
                     <div class="swiper-slide">
-                        <img class="imgload" src="http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/09/08/ChMkJ1Z9AyeISrl2ABWa7_V3yu8AAGlOQCt3csAFZsH471.jpg"
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/09/08/ChMkJ1Z9AyeISrl2ABWa7_V3yu8AAGlOQCt3csAFZsH471.jpg"
                              alt="首页banner图片02">
                     </div>
                     <div class="swiper-slide">
-                        <img class="imgload" src="http://desk.fd.zol-img.com.cn/t_s1440x900c5/g5/M00/04/04/ChMkJlbLwaiIRzwYAAwIfSSOi20AALP6wD6m5IADAiV468.jpg"
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s1440x900c5/g5/M00/04/04/ChMkJlbLwaiIRzwYAAwIfSSOi20AALP6wD6m5IADAiV468.jpg"
+                             alt="首页banner图片01">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s2560x1600c5/g5/M00/03/01/ChMkJlZvetiIMBzfABCNHgw9Bz8AAGLpQHs19UAEI02488.jpg"
+                             alt="首页banner图片01">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/03/01/ChMkJlZveDOIN1E6AAPfOkp89f8AAGLlwOnp1EAA99S610.jpg"
+                             alt="首页banner图片01">
+                    </div>
+                    <div class="swiper-slide">
+                        <img class="imgload"
+                             src="http://desk.fd.zol-img.com.cn/t_s1920x1200c5/g5/M00/01/0E/ChMkJldM_muISzxeAAqpoJKWMRcAASFOwDtgXoACqm4350.jpg"
                              alt="首页banner图片01">
                     </div>
                 </div>
@@ -51,14 +69,23 @@
        mounted () {
          console.log('挂载好了')
          var mySwiper = new Swiper('.swiper-container', {
-           direction: 'horizontal',
-           loop: true,
            pagination: '.swiper-pagination',
            nextButton: '.swiper-button-next',
            prevButton: '.swiper-button-prev',
            autoplay : 3000,
            speed:300,
            paginationClickable :true,
+           effect: 'coverflow',
+           grabCursor: true,
+           centeredSlides: true,
+           slidesPerView: 'auto',
+           coverflow: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows : true
+           }
          })
          console.log(mySwiper)
        },
@@ -68,6 +95,8 @@
          }
        }
      }
+
+
 
 
 
@@ -84,6 +113,8 @@
 .imgload {
   height: 100%;
 }
+
+
 
 
 
