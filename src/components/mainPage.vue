@@ -1,31 +1,36 @@
 <template>
-    <div id="app">
+    <div id="content">
         <el-row class="header">
-            <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+            <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal">
                 <el-menu-item index="1" class="title">❤&nbsp七嘴八舌</el-menu-item>
-                <el-menu-item index="2">首页</el-menu-item>
-                <el-menu-item index="3" class="link">个人中心</el-menu-item>
+                <router-link class="el-menu-item" to="/home">首页</router-link>
+                <router-link class="el-menu-item link" to="">个人中心</router-link>
             </el-menu>
             <div class="line"></div>
         </el-row>
-        <el-row class="container">
-            <el-col :span="8">
-                <h5>带 icon</h5>
-                <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+        <el-row class="sub_container">
+            <el-col :span="4" class="menu">
+                <el-menu default-active="2" router class="menu" @open="handleOpen" @close="handleClose">
+                    <el-menu-item index="/mainPage/submit"><i class="el-icon-star-on"></i>现在下单</el-menu-item>
                     <el-submenu index="1">
-                        <template slot="title"><i class="el-icon-message"></i>导航一</template>
+                        <template slot="title"><i class="el-icon-star-on"></i>辣香川菜</template>
                         <el-menu-item-group>
-                            <template slot="title">分组一</template>
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
+                            <template slot="title">代表地？</template>
+                            <el-menu-item index="/mainPage/Chuan_sichuan">四川</el-menu-item>
+                            <el-menu-item index="">成都</el-menu-item>
                         </el-menu-item-group>
-                        <el-menu-item-group title="分组2">
-                            <el-menu-item index="1-3">选项3</el-menu-item>
+                        <el-menu-item-group title="名菜">
+                            <el-menu-item index="/mainPage/Chuan_xiaochi">小吃</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
-                    <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
-                    <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
+                    <el-menu-item index="/mainPage/yuecai"><i class="el-icon-star-on"></i>五滋粤菜</el-menu-item>
+                    <el-menu-item index="/mainPage/zhecai"><i class="el-icon-star-on"></i>脆爽浙菜</el-menu-item>
                 </el-menu>
+            </el-col>
+            <el-col :span="20" class="right_content">
+                <div class="tabs">
+                    <router-view></router-view>
+                </div>
             </el-col>
         </el-row>
         <el-row class="footer">
@@ -33,74 +38,42 @@
         </el-row>
     </div>
 </template>
+
+
 <script>
-require('../static/swiper-3.4.0.min.css')
+require('../assets/main.css')
 
  export default {
    components: {},
    mounted () {
      console.log('挂载好了')
-     console.log(mySwiper)
    },
    methods: {
-     handleSelect(key, keyPath) {
-       console.log(key, keyPath);
-     }
-   }
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
  }
 </script>
 
 <style>
-html,body {
-  width: 100%;
-  height: 100%;
-  margin: 0 0;
-  padding: 0 0;
+.sub_container {
+    width: 100%;
+    height: 82%;
 }
-#app {
-  width: 100%;
-  height: 100%;
+.right_content {
+    width: 100%;
+    height: 100%;
+    background: url("http://desk.fd.zol-img.com.cn/t_s1440x900c5/g5/M00/01/0E/ChMkJ1dM_meIOd3-AAmh9tDS1PQAASFOgJLbx0ACaIO795.jpg");
 }
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
+.menu {
+    height: 100%;
 }
-
-.header , .footer {
-  height: 9%;
+.tabs {
+    width: 100%;
+    height: 100%;
 }
-.footer {
-  line-height: 50px;
-}
-.container {
-  height: 82%;
-}
-.link {
-  float: right !important;
-}
-.footerMsg {
-  height: 100%;
-  margin: 0 0;
-  font-family: Microsoft YaHei;
-  font-size: 80%;
-  text-align: center;
-}
-.title {
-  font-family: Microsoft YaHei;
-  font-size: 120%;
-  color: white !important;
-}
-.logo {
-  width: 100px;
-  height: 100px
-}
-.swiper-container{
-  width: 100%;
-  height: 100%;
-}
-.imgload {
-  height: 100%;
-}
-
 </style>
